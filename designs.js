@@ -11,6 +11,9 @@ const pickColor = document.getElementById("colorPicker");
 
 
 function makeGrid(inputHeight,inputWeight) {
+    while (canvas.firstChild){
+		canvas.removeChild(canvas.firstChild);
+	}
     for(let rows = 0; rows < inputHeight; rows ++){
         const trs = document.createElement("TR");
         canvas.appendChild(trs);
