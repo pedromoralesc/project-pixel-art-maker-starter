@@ -2,10 +2,11 @@
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
-const canvas = document.getElementById("pixelCanvas")
+const canvas = document.getElementById("pixelCanvas");
 const size = document.getElementById("sizePicker");
 const heigh = document.getElementById("inputHeight");
 const weight = document.getElementById("inputWeight");
+const pickColor = document.getElementById("colorPicker");
 
 
 
@@ -26,3 +27,7 @@ size.addEventListener("submit", function(e){
     makeGrid(heigh.value , weight.value);
 }, false);
 
+function respondToTheClick(e){
+    e.target.style.backgroundColor = pickColor.value
+}
+canvas.addEventListener('click', respondToTheClick);
