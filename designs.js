@@ -28,6 +28,11 @@ size.addEventListener("submit", function(e){
 }, false);
 
 function respondToTheClick(e){
-    e.target.style.backgroundColor = pickColor.value
+    if(!e.target.style.backgroundColor){
+        e.target.style.backgroundColor = pickColor.value
+    }else{
+        e.target.removeAttribute("style");
+    }
+    
 }
 canvas.addEventListener('click', respondToTheClick);
